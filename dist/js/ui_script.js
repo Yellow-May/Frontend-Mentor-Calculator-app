@@ -35,7 +35,9 @@ const handleKeys = (e, type) => {
             case "num":
                 screenMain.innerText === "0"
                     ? (screenMain.innerText = val)
-                    : (screenMain.innerText = screenMain.innerText + val);
+                    : val === "." && screenMain.innerText.indexOf(".") > -1
+                        ? (screenMain.innerText = screenMain.innerText)
+                        : (screenMain.innerText = screenMain.innerText + val);
                 break;
             case "op":
                 valX !== 0 &&
