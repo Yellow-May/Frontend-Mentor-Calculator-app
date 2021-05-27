@@ -1,0 +1,70 @@
+@mixin theme(
+	$bg-main,
+	$bg-primary,
+	$bg-secondary,
+	$key-special-bg,
+	$key-special-shadow,
+	$key-result-bg,
+	$key-result-shadow,
+	$key-bg,
+	$key-shadow,
+	$text-primary,
+	$text-key-primary,
+	$text-special-primary,
+	$text-result-primary
+) {
+	background-color: $bg-main;
+	color: $text-primary;
+
+	header {
+		nav {
+			.theme-selector {
+				background-color: $bg-primary;
+
+				input[type="range"] {
+					&::-webkit-slider-thumb {
+						background-color: $key-result-bg;
+					}
+				}
+			}
+		}
+	}
+
+	.screen {
+		background-color: $bg-secondary;
+
+		span#previousVal {
+			color: lighten($text-primary, 25);
+		}
+	}
+
+	.keypad {
+		background-color: $bg-primary;
+
+		.key {
+			background-color: $key-bg;
+			color: $text-key-primary;
+			box-shadow: 0 0.25rem 0 $key-shadow;
+
+			&.special {
+				background-color: $key-special-bg;
+				color: $text-special-primary;
+				box-shadow: 0 0.25rem 0 $key-special-shadow;
+			}
+
+			&.result {
+				background-color: $key-result-bg;
+				color: $text-result-primary;
+				box-shadow: 0 0.25rem 0 $key-result-shadow;
+			}
+		}
+	}
+
+	.attribution a {
+		@if (lightness($bg-main) > 40) {
+			color: hsl(228, 45%, 44%);
+		} @else {
+			color: lighten($bg-main, 30);
+		}
+	}
+}

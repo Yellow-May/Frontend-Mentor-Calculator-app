@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- link compiled css stylesheet(s) -->
+  <link rel="stylesheet" href="./css/styles.min.css">
+
+  <!-- link compiled js script file(s) -->
+  <script src="./js/ui_script.js" defer></script>
+  <script src="./js/theme_script.js" defer></script>
+
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+
+<!-- body tag with class of 'theme-(1,2,3)' changeable throught 'theme_script.js' file -->
+
+<body class="theme-1">
+
+  <!-- .app div tag where the calculator app itself sits -->
+  <div id="app">
+
+    <!-- header section -->
+    <header>
+      <div class="brand">calc</div>
+      <nav>
+        <span></span>
+        <span class="theme-identifier">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </span>
+        <span class="theme-title">theme</span>
+
+        <!-- theme-changer grabbed from the 'theme_script.js' file to perform the class changes of the body -->
+        <div class="theme-selector">
+          <input type="range" id="theme-changer" value="1" min="1" max="3">
+        </div>
+      </nav>
+    </header>
+
+    <!-- screen section -->
+    <!-- grabbed from the 'ui_script.js' file to view the ongoing calculational actions -->
+    <div class="screen">
+      <span id="previousVal">0</span>
+      <span id="currentVal">0</span>
+    </div>
+
+    <!-- keypad section -->
+    <!-- grabbed from the 'ui_script.j' file to perform various arithmentic actions -->
+    <!-- actions like typing the numbers (keys with class="num")-->
+    <!-- deleting the last value of the typed number (key with class="special" DEL) -->
+    <!-- reseting the calculation process (key with class="special" RESET) -->
+    <!-- performing operational function such as add, subtract etc (keys with class="op") -->
+    <!-- and spitting out a result (key with class="result") -->
+    <div class="keypad">
+      <span class="key num">7</span>
+      <span class="key num">8</span>
+      <span class="key num">9</span>
+      <span class="key special">DEL</span>
+      <span class="key num">4</span>
+      <span class="key num">5</span>
+      <span class="key num">6</span>
+      <span class="key op">+</span>
+      <span class="key num">1</span>
+      <span class="key num">2</span>
+      <span class="key num">3</span>
+      <span class="key op">-</span>
+      <span class="key num">.</span>
+      <span class="key num">0</span>
+      <span class="key op">/</span>
+      <span class="key op">x</span>
+      <span class="key special">RESET</span>
+      <span class="key result">=</span>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/Yellow-May" target="_blank">The Yellow May</a>.
+  </div>
+</body>
+
+</html>

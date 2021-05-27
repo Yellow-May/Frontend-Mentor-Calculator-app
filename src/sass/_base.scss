@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+@import "theme/themes";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.attribution {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	font-size: 11px;
+	text-align: center;
+}
