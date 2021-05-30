@@ -37,11 +37,12 @@ const handleKeys = (e: Event, type: "num" | "op" | "spec") => {
 	if (screenMain && screenPrev)
 		switch (type) {
 			case "num":
-				screenMain.innerText === "0"
-					? (screenMain.innerText = val)
-					: val === "." && screenMain.innerText.indexOf(".") > -1
-					? (screenMain.innerText = screenMain.innerText)
-					: (screenMain.innerText = screenMain.innerText + val);
+				screenMain.innerText.length !== 20 &&
+					(screenMain.innerText === "0"
+						? (screenMain.innerText = val)
+						: val === "." && screenMain.innerText.indexOf(".") > -1
+						? (screenMain.innerText = screenMain.innerText)
+						: (screenMain.innerText = screenMain.innerText + val));
 				break;
 			case "op":
 				valX !== 0 &&
